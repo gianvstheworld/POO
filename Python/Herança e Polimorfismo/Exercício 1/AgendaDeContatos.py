@@ -39,8 +39,6 @@ class AgendaContatos():
 
             index = self.findRegisterName(name)
 
-            print(index)
-
             if index != -1:
                 print('\nJá existe um registro com este nome!')
             else:
@@ -58,17 +56,17 @@ class AgendaContatos():
             print("\nNão foi possível realizar o cadastro")
             print(e)
 
-    def printContact(self):
+    def printContact(self, pessoa):
         if isinstance(self.pessoas, PessoaFisica):
-            print(PessoaFisica())
+            print(pessoa)
         else:
-            print(PessoaJuridica())
+            print(pessoa)
 
     def printContacts(self):
-        for i in range(len(self.pessoas)):
+        for pessoas in self.pessoas:
             if len(self.pessoas) == 0:
                 continue
-            self.printContact(self.pessoas[i])
+            self.printContact(pessoas)
 
     def findRegisterName(self, name):
         for i in range(self.nPessoas):
