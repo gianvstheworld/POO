@@ -7,6 +7,9 @@ class PessoaJuridica(Pessoa):
         self.substate = substate
         self.socialr = socialr
         
+    def __str__(self):
+        return("\nNome: {}\nEndereço: {}\nE-mail: {}\nRazão Social: {}\nInscrição Estadual: {}\nCNPJ: {}".format(self.name, self.address, self.email, self.socialr, self.substate, self.cnpj))
+
     def getCNPJ(self):
         return self.cnpj
     def getSubState(self):
