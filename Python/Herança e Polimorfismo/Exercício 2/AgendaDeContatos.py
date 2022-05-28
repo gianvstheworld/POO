@@ -126,9 +126,7 @@ class AgendaContatos():
         if index == -1:
             print ("** AVISO **\n Pessoa não encontrada")
         else:
-            for index in range(len(self.pessoas)):
-                self.pessoas.pop(index)
-            
+            del self.pessoas[index]
             print("Pessoa removida da agenda de contatos!\n")
             self.nPessoas -= 1 
 
