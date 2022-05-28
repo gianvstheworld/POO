@@ -129,21 +129,21 @@ class AgendaContatos():
             del self.pessoas[index]
             print("Pessoa removida da agenda de contatos!\n")
             self.nPessoas -= 1 
-
-    def getKey(self):
-        if isinstance(self.pessoa, PessoaFisica):
-            return self.pessoa.getCPF()
-        else:
-            return self.pessoa.getCNPJ()
-
+    
     def bubbleSort(self, lista):
         for passnum in range(len(lista) - 1, 0, -1):
             for i in range(passnum):
-                if lista[i] > lista[i + 1]:
-                    temp = lista[i]
-                    lista[i] = lista[i + 1]
-                    lista[i + 1] = temp
-
+                if isinstance(self.pessoas, PessoaFisica):
+                    if lista[i].getCPF() > lista[i + 1].getCPF():
+                        temp = lista[i]
+                        lista[i] = lista[i + 1]
+                        lista[i + 1] = temp
+                elif isinstance(self.pessoas, PessoaJuridica): 
+                    if lista[i].getCNPJ() > lista[i + 1].getCNPJ():
+                        temp = lista[i]
+                        lista[i] = lista[i + 1]
+                        lista[i + 1] = temp
+    
     def sortContacts(self):
         self.fisica = list()
         self.juridica = list()
@@ -156,11 +156,9 @@ class AgendaContatos():
             if isinstance(self.pessoas[i], PessoaFisica):
                 self.fisica.append(self.pessoas[i])
                 nFisica += 1
-                print("Pessoas", len(self.fisica) ,"Físicas")
             else:
                 self.juridica.append(self.pessoas[i])
                 nJuridica += 1
-                print("Pessoas", len(self.juridica), "Jurídicas")
 
         self.bubbleSort(self.fisica)
         self.bubbleSort(self.juridica)
