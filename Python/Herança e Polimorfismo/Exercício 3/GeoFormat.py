@@ -16,7 +16,7 @@ class GeoFormat:
         return self.color
     
     def perimeter(self):
-        return 2*(self.sides[0] + self.sides[1])
+        return 2 * (self.sides[0] + self.sides[1])
 
     def area(self):
-        return self.sides[0]*self.sides[1]
+        return self.sides[0] * self.sides[1]

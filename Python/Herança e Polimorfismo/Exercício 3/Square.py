@@ -6,11 +6,12 @@ class Square(GeoFormat):
 
     def __str__(self) -> str:
         self.full = self.getCheio()
-        s = '\nForma Geométrica: QUADRADO\n'
+        s = '\nForma Geométrica: Quadrado\n'
         s += "Lados: " + str(self.getSides()[0]) + " e " + str(self.getSides()[1]) + "\n"
-        s += "Area: " + str(self.area()) + "\n"
+        s += "Área: " + str(self.area()) + "\n"
         s += "Perímetro: " + str(self.perimeter()) + "\n"
         s += "Colorido: " + str(self.full) + "\n"
+
         if(self.full):
             s += "Cor: " + self.getColor() + "\n"
         
