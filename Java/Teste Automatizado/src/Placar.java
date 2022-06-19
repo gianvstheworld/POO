@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Placar {
 
 	private final int POSICOES = 10;
-	private int[] placar = new int[POSICOES];
+	public int[] placar = new int[POSICOES];
 	private boolean[] taken = new boolean[POSICOES];
 	
 	/**
