@@ -1,5 +1,9 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -38,9 +42,16 @@ public class ContaPalavra {
         mostraMapa(word_map);
 	}
     
-    public static void mostraMapa(Map <String, Integer> map){
-        for(Object key : map.keySet())
-        	System.out.println("Palavra: " + key + "\tContador: " + map.get(key));
+    public static <K extends Comparable,V extends Comparable> void mostraMapa(Map <K, V> map){
+    	List<K> map_key = new ArrayList<K>(map.keySet());
+    	Collections.sort(map_key);
+    	
+    	Map<K, V> sorted_map = new LinkedHashMap<K, V>();
+    	
+    	for(K key : map_key)
+    		sorted_map.put(key, map.get(key));
+    	
+    	System.out.println(sorted_map);
     }
         
 	public static void main(String[] args) throws IOException{
